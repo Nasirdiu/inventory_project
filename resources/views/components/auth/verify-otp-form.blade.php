@@ -31,7 +31,7 @@
                 successToast(res.data['message'])
                 sessionStorage.clear();
                 setTimeout(()=>{
-                    window.location.href='/reset-password'
+                    window.location.href='/resetPassword'
                 },1000);
             }else{
                 errorToast(res.data['message']);
@@ -44,30 +44,4 @@
 
 
 
-<script>
-   async function VerifyOtp() {
-        let otp = document.getElementById('otp').value;
-        if(otp.length !==4){
-           errorToast('Invalid OTP')
-        }
-        else{
-            showLoader();
-            let res=await axios.post('/verify-otp', {
-                otp: otp,
-                email:sessionStorage.getItem('email')
-            })
-            hideLoader();
 
-            if(res.status===200 && res.data['status']==='success'){
-                successToast(res.data['message'])
-                sessionStorage.clear();
-                setTimeout(() => {
-                    window.location.href='/resetPassword'
-                }, 1000);
-            }
-            else{
-                errorToast(res.data['message'])
-            }
-        }
-    }
-</script>
