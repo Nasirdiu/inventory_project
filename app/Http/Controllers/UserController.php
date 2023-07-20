@@ -106,7 +106,6 @@ class UserController extends Controller
         }
     }
 
-
     function VerifyOTP(Request $request){
         $email=$request->input('email');
         $otp=$request->input('otp');
@@ -122,7 +121,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'OTP Verification Successful',
-                'token'=>$token
+            //    'token'=>$token
             ],200)->cookie('token',$token,60*24*30);
 
         }
