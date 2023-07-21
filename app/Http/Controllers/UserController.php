@@ -31,6 +31,10 @@ class UserController extends Controller
         return view('pages.auth.reset-pass-page');
     }
 
+    function ProfilePage():View{
+        return view('pages.dashboard.profile-page');
+    }
+
 
 
 //backend
@@ -61,9 +65,9 @@ class UserController extends Controller
     function UserLogin(Request $request){
         $count=User::where('email','=',$request->input('email'))
             ->where('password','=',$request->input('password'))
-            ->select('id')->first;
+            ->select('id')->first();
 
-        if($count !==null){
+        if($count!==null){
             // User Login-> JWT Token Issue
             $token=JWTToken::CreateToken($request->input('email'),$count->id);
             return response()->json([
@@ -75,7 +79,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'failed',
                 'message' => 'unauthorized'
-            ],200);
+            ],401);
 
         }
 
