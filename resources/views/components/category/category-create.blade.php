@@ -43,11 +43,8 @@
             hideLoader();
 
             if(res.status===201){
-
                 successToast('Request completed');
-
                 document.getElementById("save-form").reset();
-
                 await getList();
             }
             else{
