@@ -3,12 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
+
+
+    function ProductPage():View{
+        return view('pages.dashboard.product-page');
+    }
+
+
     function CreateProduct(Request $request)
     {
         $user_id=$request->header('id');
@@ -37,6 +44,7 @@ class ProductController extends Controller
         ]);
     }
 
+
     function DeleteProduct(Request $request)
     {
         $user_id=$request->header('id');
@@ -47,11 +55,23 @@ class ProductController extends Controller
 
     }
 
+
+    function ProductByID(Request $request)
+    {
+        $user_id=$request->header('id');
+        $product_id=$request->input('id');
+        return Product::where('id',$product_id)->where('user_id',$user_id)->first();
+    }
+
+
     function ProductList(Request $request)
     {
         $user_id=$request->header('id');
         return Product::where('user_id',$user_id)->get();
     }
+
+
+
 
     function UpdateProduct(Request $request)
     {
@@ -82,7 +102,9 @@ class ProductController extends Controller
                 'category_id'=>$request->input('category_id')
             ]);
 
-        } else {
+        }
+
+        else {
             return Product::where('id',$product_id)->where('user_id',$user_id)->update([
                 'name'=>$request->input('name'),
                 'price'=>$request->input('price'),
@@ -90,7 +112,5 @@ class ProductController extends Controller
                 'category_id'=>$request->input('category_id'),
             ]);
         }
-
-
     }
 }
