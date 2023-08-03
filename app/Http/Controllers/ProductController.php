@@ -26,11 +26,11 @@ class ProductController extends Controller
         $t=time();
         $file_name=$img->getClientOriginalName();
         $img_name="{$user_id}-{$t}-{$file_name}";
-        $img_url="uploads/{$img_name}";
+        $img_url="uploads/product/{$img_name}";
 
 
         // Upload File
-        $img->move(public_path('uploads'),$img_name);
+        $img->move(public_path('uploads/product'),$img_name);
 
 
         // Save To Database
