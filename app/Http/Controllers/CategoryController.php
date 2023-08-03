@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class CategoryController extends Controller
 {
+
     function CategoryPage(){
         return view('pages.dashboard.category-page');
     }
+
     function CategoryList(Request $request){
         $user_id=$request->header('id');
         return Category::where('user_id',$user_id)->get();
@@ -29,6 +30,15 @@ class CategoryController extends Controller
         $user_id=$request->header('id');
         return Category::where('id',$category_id)->where('user_id',$user_id)->delete();
     }
+
+
+    function CategoryByID(Request $request){
+        $category_id=$request->input('id');
+        $user_id=$request->header('id');
+        return Category::where('id',$category_id)->where('user_id',$user_id)->first();
+    }
+
+
 
     function CategoryUpdate(Request $request){
         $category_id=$request->input('id');
