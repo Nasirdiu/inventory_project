@@ -90,10 +90,10 @@
                     <div class="col-12 col-lg-5 mb-5 mb-lg-0">
                         <h2 class="fw-bold mb-5">Reach Out to Us: Let's Connect and Explore Opportunities Together</h2>
                         <h4 class="fw-bold">Address</h4>
-                        <p class="text-muted mb-5">1686 Geraldine Lane New York, NY 10013</p>
+                        <p class="text-muted mb-5">68/5Green Road Panthopoth Dhaka 1205</p>
                         <h4 class="fw-bold">Contact Us</h4>
-                        <p class="text-muted mb-1">hello@wireframes.org</p>
-                        <p class="text-muted mb-0">+ 7-843-672-431</p>
+                        <p class="text-muted mb-1">nasircsediu@gmail.com</p>
+                        <p class="text-muted mb-0">+8801714771225</p>
                     </div>
                     <div class="col-12 col-lg-6 offset-lg-1">
                         <form action="#">
@@ -119,26 +119,26 @@
                     <li><a class="link-secondary" href="#">Testimonials</a></li>
                 </ul>
                 <div>
-                    <a class="d-inline-block me-4" href="#">
+                    <a class="d-inline-block me-4" target="_blank" href="https://www.facebook.com/Nasir369">
                         <img src="{{asset('/images/facebook.svg')}}">
                     </a>
-                    <a class="d-inline-block me-4" href="#">
+                    <a class="d-inline-block me-4" target="_blank" href="https://twitter.com/nasircse36">
                         <img src="{{asset('/images/twitter.svg')}}">
                     </a>
-                    <a class="d-inline-block me-4" href="#">
+                    <a class="d-inline-block me-4" target="_blank" href="https://github.com/Nasirdiu">
                         <img src="{{asset('/images/github.svg')}}">
                     </a>
-                    <a class="d-inline-block me-4" href="#">
+                    <a class="d-inline-block me-4" target="_blank" href="https://www.instagram.com/nasiruddincse/">
                         <img src="{{asset('/images/instagram.svg')}}">
                     </a>
-                    <a class="d-inline-block" href="#">
+                    <a class="d-inline-block" target="_blank" href="https://www.linkedin.com/in/nasir369/">
                         <img src="{{asset('/images/linkedin.svg')}}">
                     </a>
                 </div>
             </div>
             <div class="mb-5"></div>
             <div class="container">
-                <p class="text-center">All rights reserved © Learn with Rabbil (LWR) 2023-2024</p>
+                <p class="text-center">All rights reserved © Nasir369 2023-2024</p>
             </div>
         </footer>
 
